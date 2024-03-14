@@ -1,0 +1,5 @@
+build/*.js
+toast/*.*
+src/assets
+public
+dist

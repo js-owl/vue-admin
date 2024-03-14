@@ -1,0 +1,1171 @@
+@import url(./vue-json-viewer.scss);
+
+* {
+  box-sizing: border-box;
+}
+.df {
+  display: flex;
+}
+.jcfe {
+  justify-content: flex-end;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+/*чекбоксы*/
+.el-checkbox__input.is-checked .el-checkbox__inner {
+  background: #fff;
+  border-color: #dcdfe6;
+}
+.el-checkbox__inner::after {
+  border-color: #003d2d;
+}
+.el-checkbox__inner:hover {
+  border-color: #dcdfe6 !important;
+}
+/*инпут*/
+.el-input__inner {
+  padding: 0 13px;
+}
+.el-input__inner:focus {
+  border-color: #003d2d;
+}
+/*всплыв.окно-надо удалить*/
+/*.el-tooltip__popper.is-light {
+    border-radius: 3px;
+    color: #013e2c;
+    font-size: 10px!important;
+    font-weight: 200;
+    border: 1px solid #013e2c!important;
+    white-space: nowrap;
+    background-color: #cfdbd9!important;
+}
+.el-tooltip__popper.is-light .popper__arrow::after {
+    border-top-color: #cfdbd9!important;
+}*/
+
+/*НОВОЕ всплыв.окно*/
+/*.buttontooltip {
+  display: inline;
+  position: relative;
+}*/
+.buttontooltip:hover:after {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background: #cfdbd9;
+  border-radius: 3px;
+  color: #013e2c;
+  white-space: nowrap;
+  content: attr(title);
+  margin: -60px -45px 0;
+  font-size: 10px;
+  font-weight: 200;
+  padding: 10px;
+  min-width: 10px;
+  z-index: 9999;
+  position: fixed;
+}
+.danger.buttontooltip:hover:after,
+.primary.buttontooltip:hover:after {
+  margin: -60px -15px 0;
+}
+.uaz__tooltip {
+  border-radius: 3px;
+  color: #013e2c;
+  font-size: 10px !important;
+  font-weight: 200;
+  border: 1px solid #013e2c !important;
+  white-space: nowrap;
+  background-color: #cfdbd9 !important;
+}
+/*Увеличивает скорость Подсказки*/
+.uaz__tooltip {
+  pointer-events: none;
+  transition: 0.3s;
+}
+.uaz__tooltip:after {
+  content: ' ';
+  pointer-events: none;
+}
+/*цвет треугольника у Подсказки*/
+.el-tooltip__popper.is-light[x-placement^='top'] .popper__arrow::after {
+  border-top-color: #cfdbd9;
+}
+/*
+.buttontooltip:hover:before{
+  border: solid;
+  border-color: #cfdbd9 transparent;
+  border-width: 8px 6px 0;
+  content: "";
+/*    left: 93%;
+   top: 151px;
+    bottom: 157px;
+	position: absolute;
+	position: fixed;*/
+/*  z-index: 9999;
+    left: 38%;
+    top: -11px;
+    position: absolute;
+}*/
+
+/*отступы в таблице - кнопка Добавить*/
+.el-table th.add-button .cell {
+  padding: 0px;
+}
+/*кнопка Добавить*/
+/* .add-element {
+  background-color: #003d2d;
+  color: #fff !important;
+  text-transform: uppercase;
+  border-color: white; */
+/*посередине*/
+/* display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.add-element:hover,
+.add-element:focus {
+  color: #606266;
+  background-color: #003d2d;
+  border-color: #606266;
+} */
+
+/*размер всех кнопок */
+.fixed-width {
+  min-width: 35px;
+}
+
+.el-checkbox__label {
+  color: #003d2d !important;
+}
+.el-checkbox__label:hover,
+.el-checkbox__label:focus {
+  color: #003d2d;
+  opacity: 0.5;
+}
+
+/*иконки*/
+.el-button-icon:active {
+  /*color: #003d2d!important;*/
+  color: white !important;
+  background-color: #003d2d !important;
+  border-color: #dcdfe6 !important;
+  outline: none;
+}
+
+.el-button-icon:hover,
+.el-button-icon:focus {
+  /*color: #003d2d!important;*/
+  /*background-color: #F5F7FA!important;*/
+  color: white !important;
+  background-color: #003d2d !important;
+  border-color: #dcdfe6 !important;
+}
+
+/*иконка Удалить*/
+.el-button-icon.danger {
+  color: #d97b81 !important;
+}
+
+/*размер иконок*/
+.el-button--mini {
+  /* padding: 7px 10px;
+  min-width: 55px; */
+  padding: 7px 5px;
+  min-width: 35px;
+  height: 25px;
+  margin: 0 2px;
+}
+
+/*отступы между иконками*/
+.small-padding .el-button--mini:nth-child(1),
+.small-padding .el-button--mini:nth-child(3),
+.mini-padding .el-button--mini {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+/*
+/*кнопка-полностью
+.el-button--primary {
+  background-color: #003d2d;
+  color: #fff !important;
+  border-color: white;
+
+  background: #003d2d !important;
+  border-color: #003d2d !important;
+  /*text-transform: uppercase;
+}
+.el-button--primary:hover,
+.el-button--primary:focus {
+  color: #606266;
+  background-color: #003d2d;
+  border-color: #606266;
+}
+/*кнопка-текст
+.el-button--text,
+.el-checkbox__label {
+  color: #003d2d !important;
+}
+.el-button--text:hover,
+.el-button--text:focus,
+.el-checkbox__label:hover,
+.el-checkbox__label:focus {
+  color: #003d2d;
+  opacity: 0.5;
+}
+/*зелёная кнопка-Ok и желтая кнопка-Отмена
+.el-button--success,
+.el-button--warning {
+  /* padding: 7px 0;
+  font-size: 12px;
+  border-radius: 3px;
+  /* height: 25px;
+  min-width: 30px;
+  margin: 0 2px;
+}
+.el-button--success {
+  /*зелёная кнопка-Ok
+  /*padding: 7px 15px 7px 10px;
+  padding: 7px 8px 7px 3px;
+  margin-right: 2px;
+  margin-left: 2px;
+  min-width: 45px;
+}
+/*размер всех кнопок
+.fixed-width .el-button--mini {
+  min-width: 45px;
+}
+/*иконки
+.el-button-icon:active {
+  /*color: #003d2d!important;
+  color: white !important;
+  background-color: #003d2d !important;
+  border-color: #dcdfe6 !important;
+  outline: none;
+}
+.el-button-icon:hover,
+.el-button-icon:focus {
+  /*color: #003d2d!important;
+  /*background-color: #F5F7FA!important;
+  color: white !important;
+  background-color: #003d2d !important;
+  border-color: #dcdfe6 !important;
+}
+/*иконка Удалить
+.el-button-icon.danger {
+  color: #d97b81 !important;
+}
+/*размер иконок
+.el-button--mini {
+  padding: 7px 10px;
+  min-width: 55px;
+  height: 25px;
+  margin: 0 2px;
+}
+*/
+
+/*отступы между иконками*/
+.small-padding .el-button--mini:nth-child(1),
+.small-padding .el-button--mini:nth-child(3),
+.mini-padding .el-button--mini {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+/*таблица-размер по высоте(уже)*/
+.el-table--medium th,
+.el-table--medium td {
+  padding: 1px 0;
+}
+/*пагинация*/
+/*пагинация*/
+.pagination-container {
+  float: right;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #003d2d;
+}
+.el-pagination.is-background .el-pager li:not(.disabled):hover {
+  color: #ffffff;
+  opacity: 0.8;
+  /* color: #003d2d; */
+}
+/*/labortime/upload/edit и /labortime/groupmodification/edit-инпут с кнопкой в одну строку*/
+.el-table .cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 19px;
+}
+/*справа от инпута отступ от кнопки*/
+.edit-input-name {
+  margin-right: 2px;
+}
+/*убрали падинг, т.к.делал большое расстояние между инпут и кнопкой - возможно он был нужен в другом месте?? */
+.edit-input {
+  padding-right: 0px !important;
+}
+/*перенос текста*/
+span,
+.break_word .cell {
+  word-break: break-word;
+}
+/*в одну строку*/
+.el-table__header .cell {
+  white-space: nowrap;
+}
+/*скрол в таблице при 1280px
+.el-table--border {
+  overflow-x: auto;
+  max-width: 1280px;
+}*/
+/*скрол в таблице при 1280px*/
+@media (max-width: 1280px) {
+  .el-table--border {
+    overflow-x: auto;
+  }
+}
+/*зелёный скрол в таблице при 1280px*/
+/*
+html {
+  --scrollbarBG: #cfdbd9;
+  --thumbBG: #7fa099;
+}
+.modification .content{
+  overflow-y: auto;
+  height: 100%;
+}
+.modification .content::-webkit-scrollbar {
+  width: 20px;
+  overflow: hidden;
+}
+.modification .content::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.modification .content::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 8px;
+  border: 5px solid var(--scrollbarBG);
+  background-clip: content-box;
+}
+*/
+/*инпут*/
+.el-input--small .el-input__inner {
+  height: 25px;
+}
+/*Значение-посередине*/
+.labortime_center .cell span {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+/*"Назад"*/
+.el-page-header__left {
+  background: #003d2d;
+  color: white;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.el-page-header {
+  margin-bottom: 10px;
+  box-shadow: 0 0px 77px rgb(0 21 41 / 8%);
+}
+.el-page-header__content {
+  font-size: 14px;
+  font-weight: bold;
+  color: #909399;
+}
+.el-select-dropdown__item.selected {
+  color: #606266;
+}
+.el-radio__input.is-checked .el-radio__inner {
+  background: #003d2d;
+}
+.el-button.is-plain:hover,
+.el-button.is-plain:focus,
+.el-radio__input.is-checked .el-radio__inner {
+  color: #003d2d;
+}
+.el-radio__inner:hover,
+.el-radio__input.is-checked .el-radio__inner,
+.el-button.is-plain:hover,
+.el-button.is-plain:focus,
+.el-select .el-input.is-focus .el-input__inner,
+.el-select .el-input__inner:focus {
+  border-color: #003d2d;
+}
+/*Текст внутри селекта*/
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+  color: #606266;
+  font-size: 12px;
+}
+/*Список дилеров: ширина инпут и селекта*/
+.max_string .el-select,
+.max_string .el-form-item__content {
+  width: 100%;
+}
+.max_string .el-form-item__label {
+  white-space: nowrap;
+}
+/*Список дилеров: шаблон для шапки: цвет и шрифт*/
+.el_card_header_sample .el-card__header {
+  background-color: #cfdbd9;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding: 5px 20px;
+}
+.el_card_header_sample .el-card__header span {
+  line-height: 2px;
+  font-size: 18px;
+  color: #303133;
+  font-weight: 300;
+}
+/*Список дилеров: шаблон для шапки таблиц: цвет и отступ*/
+.table_sample th .cell {
+  color: #606266;
+}
+.max_string .el-card__body {
+  padding: 5px 20px 20px;
+}
+.max_string .el-form-item--medium .el-form-item__label {
+  line-height: 24px;
+}
+.max_string label {
+  margin-bottom: 4px;
+}
+.el_card_header_sample .el-card__header {
+  height: 31px;
+}
+.dealer_edit_card .el-form-item__error {
+  font-size: 10px;
+  padding-top: 1px;
+}
+.el-form-item__error {
+  font-size: xx-small;
+  position: initial;
+}
+.dealer_list_card .search_form,
+.dealer_edit_card .search_form,
+.user_list_card .search_form .dealer_list_card .search_form {
+  width: 770px;
+}
+.userlist_index_card .search_form,
+.dealer_edit_card .search_form,
+.editOperation_edit_card .search_form {
+  width: 609px;
+}
+.dealer_edit_card .search_edit {
+  margin-top: -15px;
+}
+.dealer_list_card .el-select {
+  width: 250px;
+}
+.user_edit_card .el-form-item.el-form-item--medium,
+.user_edit_card .el-form-item__content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.user_edit_card label {
+  width: 200px;
+}
+.user_edit_card .el-form-item__content,
+.user_edit_card .user_edit_form .el-row {
+  width: 46.66666667%;
+}
+.user_edit_card .user_edit_form .el-form-item__content,
+.user_edit_card .user_edit_form .el-select {
+  width: 100%;
+}
+.card_user_index .el-checkbox.is-checked {
+  position: relative;
+  top: 2.6px;
+}
+.dealer_activity_select .el-date-editor,
+.dealer_activity_select .el-select {
+  width: 292px !important;
+}
+.operations_edit_card {
+  display: flex;
+  justify-content: center;
+}
+.editOperation_edit_card textarea {
+  height: auto !important;
+}
+.editOperation_edit_card textarea:focus {
+  border-color: #003d2d;
+}
+.editOperation_edit_card .el-autocomplete {
+  width: 100%;
+}
+.editOperation_edit_card .add-element {
+  margin-right: 0 !important;
+  margin-bottom: 10px;
+}
+/*кнопка Добавить - Изменить*/
+.editOperation_edit_card .add-change {
+  display: block;
+  margin-left: auto !important;
+  margin-bottom: 10px;
+  /* border: none; */
+  /* border-bottom: 1px dashed #000; */
+  background-color: white;
+  color: #fff !important;
+  /*посередине*/
+}
+.editOperation_edit_card .el-card__body {
+  padding: 10px;
+}
+.editOperation_edit_card .box {
+  border-top: 3px solid #003d2d;
+  margin-bottom: 10px;
+}
+.editOperation_edit_card .title {
+  font-size: 18px;
+  color: #003d2d;
+  text-transform: uppercase;
+  margin: 0;
+}
+.editOperation_edit_card .action-center .cell {
+  justify-content: center;
+}
+.notifyOperation_dialog_add .el-dialog__body {
+  padding: 0 20px 30px 20px;
+}
+.notifyOperation_dialog_add .el-dialog__footer {
+  padding-top: 70px;
+}
+.el-tabs--border-card > .el-tabs__header .el-tabs__item:not(.is-disabled):hover,
+.el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+  color: #003d2d;
+}
+.select_notification_dialog .search_filter,
+.tool_item .search_filter {
+  margin: 0;
+}
+.select_notification_dialog .search_form,
+.tool_item .search_form {
+  width: 609px;
+}
+.select_notification_dialog .search_input {
+  margin: 0;
+}
+.message_card .cell {
+  word-break: break-word !important;
+}
+.message_card col:nth-child(1) {
+  width: 25%;
+}
+
+/* .el-button--primary {
+  background: #003d2d !important;
+  border-color: #003d2d !important;
+} */
+.message_edit .el-card__body {
+  height: 800px;
+}
+/*фиксируем "Назад"(groupmodification/edit)*/
+.container_fixed_next {
+  padding-top: 40px;
+}
+.fixed_next {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  padding: 5px 0;
+  z-index: 9;
+  background: #f9f9fa;
+}
+/*Список уведомлений, Подробное описание: svg*/
+.message_edit .ck-heading-dropdown {
+  width: 250px !important;
+}
+.message_edit .ck-button_with-text .ck-dropdown__arrow {
+  margin-left: 116px !important;
+}
+/* высота редактора CKEditor */
+.ck-editor__editable_inline {
+  height: 500px;
+}
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline
+  p {
+  line-height: 19px !important;
+}
+.dealer_card .search_filter {
+  margin-top: -10px;
+}
+.label_filter {
+  padding-left: 0px !important;
+  line-height: 15px !important;
+}
+/*кнопка Скачать-убрала нижнее подчеркивание*/
+.el-link.is-underline:hover:after {
+  border-bottom: 0px !important;
+}
+/*РЕДАКТОР ТЕХ. КАРТ*/
+.form_flowchart_editForm .el-form-item__label {
+  padding: 0;
+  margin: 0;
+}
+/*ТЕХКАРТЫ/Создание/редактирование техкарт*/
+.flowchart_edit {
+  padding-bottom: 50px;
+  padding-top: 0px;
+}
+/*СТРУКТУРА ТЕХКАРТЫ*/
+.flowchart_edit .el-tree-node__content {
+  height: auto;
+}
+.flowchart_select_add .el-input__suffix {
+  display: none;
+}
+.flowchart_select_add .el-input__inner {
+  height: 25px;
+  padding: 0 22px;
+}
+.flowchart_select_add .el-input__inner:hover,
+.flowchart_select_add .el-input__inner:focus {
+  background-color: #003d2d;
+}
+.flowchart_select_add .el-input__inner::-webkit-input-placeholder {
+  color: #606266;
+} /* WebKit browsers */
+.flowchart_select_add .el-input__inner:-moz-placeholder {
+  color: #606266;
+} /* Mozilla Firefox 4 to 18 */
+.flowchart_select_add .el-input__inner::-moz-placeholder {
+  color: #606266;
+} /* Mozilla Firefox 19+ */
+.flowchart_select_add .el-input__inner:-ms-input-placeholder {
+  color: #606266;
+} /* Internet Explorer 10+ */
+.flowchart_select_add .el-input__inner:hover::-webkit-input-placeholder,
+.flowchart_select_add .el-input__inner:focus::-webkit-input-placeholder {
+  color: white;
+}
+.flowchart_select_add .el-input__inner:hover::-moz-placeholder,
+.flowchart_select_add .el-input__inner:focus::-moz-placeholder {
+  color: white;
+}
+.flowchart_select_add .el-input__inner:hover::-ms-input-placeholder,
+.flowchart_select_add .el-input__inner:focus::-ms-input-placeholder {
+  color: white;
+}
+
+/*ТК: Зелёная шапка (модальное окно)*/
+.el-dialog__header {
+  height: 60px;
+  background-color: #cfdbd9;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  /*text-transform: uppercase;*/
+  color: #003d2d;
+}
+/*ТК: Уведомление (модальное окно)*/
+.flowchart_modal_table .el-tree-node {
+  white-space: normal;
+}
+.flowchart_modal_table .el-tree-node__content {
+  height: auto;
+  align-items: flex-start;
+}
+/*ТК: Операции (модальное окно)*/
+.operationSelect .el-table__body-wrapper td:nth-child(2) .cell {
+  padding-right: 30px;
+  word-break: break-word;
+}
+.operationSelect .operation_selection th:nth-child(1) .el-checkbox {
+  display: none;
+}
+.flowchart_editor .el-dialog {
+  min-width: calc(560px + 400px);
+}
+/*скролл*/
+html {
+  --scrollbarBG: #cfdbd9;
+  --thumbBG: #7fa099;
+}
+.operationSelect .el-table__body-wrapper,
+.scroll_tree .el-tree,
+.scroll .is-scrolling-none {
+  height: 365px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scroll_tree .el-tree {
+  height: 389px;
+}
+.flowchart_preview_dialog .el-dialog__body {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: calc(100vh - 180px);
+}
+.operationSelect .el-table__body-wrapper::-webkit-scrollbar,
+.flowchart_preview_dialog .el-dialog__body::-webkit-scrollbar,
+.scroll_tree .el-tree::-webkit-scrollbar,
+.scroll .is-scrolling-none::-webkit-scrollbar {
+  width: 20px;
+  overflow: hidden;
+}
+.operationSelect .el-table__body-wrapper::-webkit-scrollbar-track,
+.flowchart_preview_dialog .el-dialog__body::-webkit-scrollbar-track,
+.scroll_tree .el-tree::-webkit-scrollbar-track,
+.scroll .is-scrolling-none::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.operationSelect .el-table__body-wrapper::-webkit-scrollbar-thumb,
+.flowchart_preview_dialog .el-dialog__body::-webkit-scrollbar-thumb,
+.scroll_tree .el-tree::-webkit-scrollbar-thumb,
+.scroll .is-scrolling-none::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 8px;
+  border: 5px solid var(--scrollbarBG);
+  background-clip: content-box;
+}
+/*flowchart/edit-Редактор: длина инпутов(ТК,Таблицы)*/
+.flowchart_input_width .el-autocomplete {
+  width: 95%;
+}
+.el-autocomplete-suggestion {
+  width: auto !important;
+}
+.el-autocomplete-suggestion__wrap {
+  padding: 8px 0;
+}
+.el-autocomplete-suggestion__list li {
+  font-size: 12px;
+}
+/*Типовые действия (ТД)*/
+.action_list tbody td:nth-child(2) .cell,
+.action_list tbody td:nth-child(3) .cell {
+  margin: auto 40%;
+}
+/*ТК*/
+.sticky_edit .sub-navbar {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #fff 0%,
+    #f1f1f1 100%,
+    #f1f1f1 100%
+  ) !important;
+  background: #dcdfe6 !important;
+  background: #f1f3f4 !important;
+  background: #f5f7fa !important;
+  background: #fff !important;
+  border-bottom: 1px solid rgba(204, 214, 228, 0.6);
+  height: 53px !important;
+  left: 0px;
+  right: 0px;
+  width: 100% !important;
+  height: 50px !important;
+}
+/*Панель кнопок - цвета(ТК, Операции, карточка на корректировку(Заявка на изменение тех. карты (на корректировке))*/
+.sticky_edit .btn-warning,
+.sticky_edit .btn-warning:focus,
+.sticky_edit .btn-warning:active {
+  background-color: #efb861 !important;
+  border: none !important;
+}
+.sticky_edit .btn:active:focus,
+.sticky_edit .btn:focus {
+  outline: thin dotted !important;
+  outline: 5px auto -webkit-focus-ring-color !important;
+  outline-offset: -2px !important;
+}
+.sticky_edit .btn-warning:hover {
+  background-color: #e08e0b !important;
+}
+.sticky_edit .btn-default {
+  background-color: #cfdbd9 !important;
+  color: #444 !important;
+  border-color: #ddd !important;
+}
+.sticky_edit .btn-default:hover,
+.sticky_edit .btn-default:active,
+.sticky_edit .btn-default.hover {
+  background-color: #e7e7e7 !important;
+}
+.sticky_edit .btn-default:active,
+.sticky_edit .btn-default:focus,
+.sticky_edit .btn-default:hover {
+  color: #333 !important;
+  background-color: #e6e6e6 !important;
+  border-color: #adadad !important;
+}
+.sticky_edit .btn-primary {
+  background-color: #1890ff !important;
+  color: #fff !important;
+  border-color: #ddd !important;
+}
+.sticky_edit .btn-primary:hover,
+.sticky_edit .btn-primary:active,
+.sticky_edit .btn-primary.hover {
+  background-color: #e7e7e7 !important;
+}
+.sticky_edit .btn-primary:active,
+.sticky_edit .btn-primary:focus,
+.sticky_edit .btn-primary:hover {
+  background-color: #003d2d !important;
+  border-color: #adadad !important;
+}
+/* модальное окно (кнопка Изменить) - FlowchartStructureDialog*/
+.flowchart_dialog_tree_text .el-checkbox__label,
+.flowchart_table_text,
+.flowChart_form_attachment_parts .el-table__body .cell {
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
+  font-size: 14px;
+  word-break: break-word;
+  color: #606266 !important;
+  text-transform: lowercase;
+  font-weight: normal;
+}
+.flowchart_dialog_tree_text .el-checkbox,
+.flowchart_editor .el-tree-node__content {
+  display: flex;
+  align-items: flex-start;
+}
+.flowchart_dialog_tree_text .el-checkbox__label {
+  white-space: normal;
+}
+.flowchart_editor .el-tree-node__content {
+  height: auto !important;
+  word-break: break-word;
+  padding-right: 10px;
+}
+.flowChart_form_attachment_parts .el-form-item {
+  margin: 0 !important;
+  height: 0 !important;
+}
+.flowChart_form_attachment_parts .has-gutter th {
+  background-color: #003d2d;
+  color: #fff;
+}
+.flowChart_form_attachment_parts .el-table {
+  display: none;
+}
+.flowChart_form_attachment_parts .el-table--enable-row-transition {
+  display: block !important;
+}
+.flowchart_modal_selected_items .cell {
+  text-transform: lowercase;
+  word-break: break-word;
+}
+/* модальное окно (кнопка Предварительный просмотр) - flowchartPreview*/
+.modal_preview {
+  padding: 0 20px !important;
+  padding-left: 65px !important;
+}
+.flowchart_preview_dialog .el-dialog {
+  margin-top: 3vh !important;
+  margin-bottom: 5vh !important;
+  z-index: 999999;
+  height: auto;
+  width: 1100px;
+}
+.break_word {
+  word-break: break-word;
+}
+.equipment_tools .el-table__body td {
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+}
+.equipment_tools .el-table__body td:first-child {
+  border-left: 2px solid grey;
+}
+.equipment_tools .el-table__body td:nth-child(2) {
+  border-right: 2px solid grey;
+}
+.equipment_tools .el-table__body tr:first-child td {
+  border-top: 2px solid grey;
+}
+.equipment_tools .el-table__body tr:last-child td {
+  border-bottom: 2px solid grey;
+}
+.equipment_tools .el-table--group,
+.equipment_tools .el-table--border {
+  border: none;
+}
+.flowchart_preview_dialog .owner {
+  display: none;
+}
+.flowchartTable .bidEdit_card .title,
+.flowchartTable table,
+.flowchartTable .title p {
+  font-weight: normal !important;
+  color: rgba(0, 0, 0, 0.87);
+}
+/*зеленый комментарий - отступ*/
+.redirect .el-row,
+.flowchart .el-row,
+.flowchartTable .el-row {
+  margin-right: -9px !important;
+}
+.flowchart .el-row {
+  margin-right: 1px;
+}
+.flowchartTable .title,
+.flowchartTable .title strong {
+  color: #777;
+}
+.flowchartTable table strong {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+.flowchartTable table td,
+.flowchartTable table th {
+  line-height: 1;
+}
+/*красная обводка, когда звёздочка*/
+.el-form-item.is-error .ck-editor__editable,
+.el-form-item.is-error .ck-editor__editable:focus {
+  border-color: #ff4949 !important;
+}
+.table_left_img .cell {
+  padding: 0 !important;
+}
+.table_left_img td:first-child {
+  padding: 0.5cm 0 !important;
+}
+/*Ckeditor*/
+.ck.ck-editor__editable_inline {
+  overflow: hidden !important;
+  height: 100% !important;
+}
+.ck.ck-sticky-panel .ck-sticky-panel__content_sticky {
+  top: 50px !important;
+}
+
+/* Стили кнопок */
+
+.el-button:hover {
+  opacity: 0.8;
+  box-shadow: 0px 0px 6px 0px #586563;
+}
+
+.el-button:disabled {
+  opacity: 0.5;
+}
+
+/*кнопка по умолчанию default*/
+.el-button--default:hover,
+.el-button--default.is-disabled:hover {
+  color: #fff;
+  border-color: #003d2d;
+  background-color: #dbebe7;
+}
+
+.el-button--default.is-disabled {
+  color: #606266;
+}
+
+/*кнопка-полностью primary*/
+.el-button--primary,
+.el-button--primary.is-disabled {
+  background: #003d2d;
+  background-color: #003d2d;
+  border-color: #003d2d;
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background-color: #003d2d;
+  border-color: #606266;
+}
+
+.el-button--primary.is-disabled:hover {
+  background: #003d2d;
+  background-color: #003d2d;
+  border-color: #003d2d;
+}
+
+.el-button--success,
+.el-button--warning {
+  min-width: 30px;
+  margin: 0 2px;
+}
+.el-button--success {
+  margin-right: 2px;
+  margin-left: 2px;
+  min-width: 45px;
+}
+
+.el-button--info,
+.el-button--info.is-disabled,
+.el-button--info.is-disabled:hover {
+  color: #ffffff;
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.el-button--info:hover {
+  background: #46a6ff;
+  border-color: #46a6ff;
+}
+
+.el-button--danger {
+  color: #ffffff;
+  background-color: #ff4949;
+  border-color: #ff4949;
+}
+
+.el-button--danger:hover {
+  background-color: #ff4949;
+  border-color: #ff4949;
+}
+
+.el-button--text {
+  color: #909399;
+  border: 0 solid transparent;
+  background: transparent;
+}
+
+.el-button--text:hover {
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Панель кнопок */
+
+.el-table .button-tooltip .cell,
+.el-table .box-item .cell {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Стили комментариев */
+
+.comment__icon {
+  background: url('../assets/img/comment.svg');
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  right: -30px;
+  opacity: 1;
+}
+
+.comment__icon:hover,
+.comment__icon:focus,
+.comment__icon:focus-visible {
+  border: none;
+  box-shadow: none;
+  outline-width: 0;
+  outline: 0;
+}
+
+.comment__popup {
+  position: absolute;
+  top: 0;
+  padding: 21px 4px 5px;
+  border: 1px solid black;
+  z-index: 9;
+  background-color: #fff;
+  margin-bottom: 60px;
+  width: 265px;
+  margin-left: 10px;
+}
+.comment {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #f5fffa;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-bottom: 1px solid #eee; /*.comment__delimiter  */
+  margin-bottom: 5px; /*.comment__delimiter  */
+  box-sizing: border-box;
+}
+.comment__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 13px;
+  opacity: initial;
+  color: #000 !important;
+}
+.comment__time {
+  text-align: right;
+  font-size: 11px;
+  margin-bottom: 0;
+}
+.comment__fio {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #2e8b57;
+  word-break: break-word;
+}
+.comment__text {
+  word-break: break-word;
+  margin-bottom: 0;
+}
+
+.comment__button {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.comment__reply {
+  background: url('../assets/img/reply.svg') center/20px no-repeat transparent;
+  width: 30px;
+  height: 25px;
+  float: right;
+  margin: 0 10px 0 auto;
+  box-sizing: border-box;
+}
+
+.comment__reply:hover,
+.comment__reply:active,
+.comment__reply:focus {
+  background-image: url('../assets/img/reply-hover.svg');
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.button-in-comment {
+  border-radius: 0;
+  padding: 5px;
+  margin: 0 15px;
+}
+
+.button-in-comment:hover,
+.button-in-comment:focus,
+.button-in-comment:active {
+  padding: 5px;
+  background-color: transparent;
+  color: #333;
+  border-radius: 0;
+  border-bottom: 1px #333 solid;
+  box-shadow: none;
+}
+
+.comment-container {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.comment-table {
+  max-height: 90vh;
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 0;
+  border-top: 1px solid #dfe6ec;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.comment-table .el-table__row .cell {
+  justify-content: center;
+}
